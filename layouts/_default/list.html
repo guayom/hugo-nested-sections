@@ -1,0 +1,18 @@
+{{ define "main" }}
+  {{ with .Sections }}
+    <h2>Sections:</h2>
+    <ul>
+      {{ range . }}
+        {{ partial "section-li.html" . }}
+      {{ end }}
+    </ul>
+  {{ end }}
+  {{ with .Pages }}
+    <h2>Pages:</h2>
+    <ul>
+      {{ range . }}
+        {{ .Render "li" }}
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}
